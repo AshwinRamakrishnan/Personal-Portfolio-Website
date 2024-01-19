@@ -1,0 +1,183 @@
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+    <meta name="Ashwin.GTWO" content="width=device-width, initial-scale=1.0"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Join My Team</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin:  0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-image: url('https://i.gadgets360cdn.com/large/google_io_afp_1583296131115.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #f4f4f4;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100vh;
+            text-align: center;
+
+        }
+
+        nav { 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            width: 100%;
+
+            
+            }
+            
+            
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 1em;
+            font-weight: bold;
+          
+        }
+
+        section {
+          
+            width: 100%;
+            padding: 3em;
+            text-align: center;
+            color: #000000;
+            
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.5em 1em;
+            text-decoration: none;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #285aff;
+            color: #fff;
+            text-align: center;
+            padding: 1em  0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+        <img src="logo.png"alt="your logo">
+        <ul>   
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="team.html">Team</a>
+            <a href="Apply.html">GDSC</a>
+       </ul>
+        </nav>
+        <h1>Global Technology World Organisation Student Developer Club(GDSC)</h1>
+        <p> Join This Club ( Group ) , You Learning Technology And You Creat Own Project  With Developer Team </p>
+        
+    </header>
+
+    <section id="Apply">
+       <div class="container">
+            <h2>Join Student Developer Club</h2>
+            <form action="https://formcarry.com/s/IWxevDFIEqy" method="POST" >
+              <input type="text" name="name"placeholder="Enter Your Full Name">
+              <input type="email" name="email"placeholder="Your Email">
+              <input type="date" id="Date OF Birth" name="Date OF Birth" required>
+              
+              <select id="Education or Working" name="Your Professional" required>
+                <option value="" disabled selected>Select Your Education or Professional</option>
+                <option value="Worker">Worker</option>
+                <option value="Bachelor's Of Technology"> Bachelor's Of Technology</option>
+                <option value="Bachelor's Of Engineering">Bachelor's Of Engineering </option>
+                <option value="Bachelor's Of Computer Science">Bachelor's Of Computer Science</option>
+                <option value="Computer Science Related">Computer Science Related</option>
+            </select>
+
+            <select id="educationyear" name="Your Professional and Education Year" required>
+                <option value="" disabled selected>Select Your Professional and Education Year</option>
+                <option value="Year1">First Year</option>
+                <option value="Year2"> Second  Year</option>
+                <option value="Year3">Third Year</option>
+                <option value="Year4">Fourth Year</option>
+                <option value="Computer Field">Computer Field</option>
+            </select>
+             
+    
+            <form action="process_form.php"  method="post" id="districtForm">
+               
+                <select id="state" name="state" onchange="updateDistrictOptions()" required>
+                    <option value="" disabled selected>Select your state</option>
+                    <option value="TamilNadu">Tamil Nadu</option>
+                    <option value="Kerala">Kerala</option>
+                </select>
+        
+                
+                <select id="district" name="district" required>
+                    <!-- District options will be populated dynamically using JavaScript -->
+                </select>
+                <textarea name="message" placeholder="Your Message"></textarea>
+             
+    <textarea id="experience" name="experience" rows="4" placeholder="Experiences"></textarea>
+    <textarea id="coverLetter" name="coverLetter" rows="4"placeholder="Cover Letter"></textarea>
+    <button type="submit">Submit</button>
+        
+                
+ 
+        
+            <script>
+                function updateDistrictOptions() {
+                    var stateSelect = document.getElementById('state');
+                    var districtSelect = document.getElementById('district');
+        
+                    // Clear existing options
+                    districtSelect.innerHTML = '';
+        
+                    // Populate district options based on the selected state
+                    if (stateSelect.value === 'TamilNadu') {
+                        var tamilNaduDistricts = ['Ariyalur', 'Chengalpattu', 'Chennai', 'Coimbatore', 'Cuddalore', 'Dharmapuri', 'Dindigul', 'Erode', 'Kallakurichi', 'Kanchipuram', 'Kanyakumari', 'Karur', 'Krishnagiri', 'Madurai', 'Mayiladuthurai', 'Nagapattinam', 'Namakkal', 'Nilgiris', 'Perambalur', 'Pudukkottai', 'Ramanathapuram', 'Ranipet', 'Salem', 'Sivaganga', 'Tenkasi', 'Thanjavur', 'Theni', 'Thoothukudi', 'Tiruchirappalli', 'Tirunelveli', 'Tirupathur', 'Tiruppur', 'Tiruvallur','Thiruvarur', 'Tiruvannamalai', 'Vellore', 'Viluppuram', 'Virudhunagar' /* ... Add all 38 districts ... */];
+                        tamilNaduDistricts.sort().forEach(function (district) {
+                            var option = document.createElement('option');
+                            option.value = district;
+                            option.text = district;
+                            districtSelect.add(option);
+                        });
+                    } else if (stateSelect.value === 'Kerala') {
+                        var keralaDistricts = ['Alappuzha', 'Ernakulam', 'Idukki', 'Kannur', 'Kasaragod', 'Kollam', 'Kottayam', 'Kozhikode', 'Malappuram', 'Palakkad', 'Pathanamthitta', 'Thiruvananthapuram', 'Thrissur', 'Wayanad' /* ... Add all 14 districts ... */];
+                        keralaDistricts.sort().forEach(function (district) {
+                            var option = document.createElement('option');
+                            option.value = district;
+                            option.text = district;
+                            districtSelect.add(option);
+                        });
+                    }
+                }
+                </script>
+            </div>  <!-- Content for the "Contact" section -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 GTWO.LLC . All rights reserved.</p>
+    </footer>
+</body>
+</html>
